@@ -8,3 +8,8 @@
 .ring-large{border-right-color:rgba(255,255,255,.8)}
 .ring-small{border-color:rgba(255,255,255,.5);border-top-color:transparent}
 .orb-one{background:#fff}.orb-three{background:#777}
+
+.visual-grid{background-image:linear-gradient(rgba(255,255,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.12) 1px,transparent 1px)}
+.visual-ring{border-color:rgba(255,255,255,.45);box-shadow:0 0 30px rgba(255,255,255,.08)}
+.signal{border-color:rgba(255,255,255,.3)}.signal span{background:#fff}
+.art-orbit{border-color:rgba(255,255,255,.5)}
