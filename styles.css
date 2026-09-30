@@ -13,3 +13,4 @@
 .visual-ring{border-color:rgba(255,255,255,.45);box-shadow:0 0 30px rgba(255,255,255,.08)}
 .signal{border-color:rgba(255,255,255,.3)}.signal span{background:#fff}
 .art-orbit{border-color:rgba(255,255,255,.5)}
+.core-logo{display:block;width:105px;height:auto;filter:brightness(0) invert(1)}
