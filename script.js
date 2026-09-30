@@ -2,6 +2,7 @@ const form = document.querySelector('#lead-form');
 const note = document.querySelector('#form-note');
 
 form.addEventListener('submit', async (event) => {
+  if (form.action.includes('formsubmit.co')) return;
   if (form.action.includes('REPLACE_WITH_FORM_ID')) {
     event.preventDefault();
     note.textContent = 'Form is ready — connect a Formspree endpoint to receive submissions.';

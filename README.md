@@ -4,7 +4,7 @@ Static, responsive landing page for AWEVO Software Solutions.
 
 ## Lead form setup
 
-The form is wired for Formspree. Replace `REPLACE_WITH_FORM_ID` in `index.html` with the Formspree form ID, or replace the form action and submission handler with the team's CRM endpoint before launch.
+The form posts to FormSubmit and delivers notifications to `luisgomezbvt2023@gmail.com`. FormSubmit may send a one-time activation email on the first submission; click that activation link before relying on production leads.
 
 ## Local preview
 
