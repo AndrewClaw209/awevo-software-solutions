@@ -4,7 +4,7 @@ Static, responsive landing page for AWEVO Software Solutions.
 
 ## Lead form setup
 
-The form posts to FormSubmit and delivers notifications to `luisgomezbvt2023@gmail.com`. FormSubmit may send a one-time activation email on the first submission; click that activation link before relying on production leads.
+The form writes validated inquiries to the `inquiries` collection in Firebase project `awevo-website`. Firestore rules allow public creates with bounded fields but deny reads, updates, and deletes. Connect Firebase Trigger Email (or a server-side mail provider) to the collection to notify `luis@awevosoftware.com`.
 
 ## Local preview
 
