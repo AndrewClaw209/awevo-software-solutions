@@ -24,14 +24,21 @@ form.addEventListener('submit', async (event) => {
 
   const data = new FormData(form);
   try {
-    await addDoc(collection(db, 'inquiries'), {
+    const inquiry = {
       name: String(data.get('name')).trim(),
       email: String(data.get('email')).trim().toLowerCase(),
       message: String(data.get('message')).trim(),
       source: 'awevo-website',
       status: 'new',
       createdAt: serverTimestamp(),
+    };
+    await addDoc(collection(db, 'inquiries'), inquiry);
+    const notification = await fetch('/api/notify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: inquiry.name, email: inquiry.email, message: inquiry.message }),
     });
+    if (!notification.ok) throw new Error('Inquiry saved but notification failed');
     form.reset();
     note.textContent = 'Thanks — your inquiry is in. We’ll be in touch shortly.';
     note.style.color = '#111';
