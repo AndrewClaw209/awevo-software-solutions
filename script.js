@@ -44,7 +44,7 @@ form.addEventListener('submit', async (event) => {
     note.style.color = '#111';
   } catch (error) {
     console.error('Inquiry submission failed', error);
-    note.textContent = 'We couldn’t send that just now. Please email hello@awevo.ai.';
+    note.textContent = 'We couldn’t send that just now. Please email luis@awevosoftware.com.';
     note.style.color = '#111';
   } finally {
     submitButton.disabled = false;

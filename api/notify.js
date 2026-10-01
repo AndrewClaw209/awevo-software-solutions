@@ -1,6 +1,7 @@
 const nodemailer = require('nodemailer');
 
-const recipient = 'luisgomezbvt2023@gmail.com';
+const smtpUser = 'luisgomezbvt2023@gmail.com';
+const recipient = 'luis@awevosoftware.com';
 
 module.exports = async function handler(request, response) {
   if (request.method !== 'POST') {
@@ -16,7 +17,7 @@ module.exports = async function handler(request, response) {
 
   const transporter = nodemailer.createTransport({
     service: 'gmail',
-    auth: { user: recipient, pass: process.env.GMAIL_APP_PASSWORD },
+    auth: { user: smtpUser, pass: process.env.GMAIL_APP_PASSWORD },
   });
 
   try {
