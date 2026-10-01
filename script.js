@@ -11,11 +11,7 @@ const firebaseConfig = {
 };
 
 const db = getFirestore(initializeApp(firebaseConfig));
-const form = document.querySelector('#lead-form');
-const note = document.querySelector('#form-note');
-const submitButton = form.querySelector('button[type="submit"]');
-
-form.addEventListener('submit', async (event) => {
+async function submitInquiry(form, note, submitButton, event) {
   event.preventDefault();
   submitButton.disabled = true;
   submitButton.querySelector('span').textContent = '…';
@@ -50,4 +46,30 @@ form.addEventListener('submit', async (event) => {
     submitButton.disabled = false;
     submitButton.querySelector('span').textContent = '↗';
   }
+}
+
+document.querySelectorAll('.lead-form').forEach((form) => {
+  const note = form.querySelector('.form-note');
+  const submitButton = form.querySelector('button[type="submit"]');
+  form.addEventListener('submit', (event) => submitInquiry(form, note, submitButton, event));
 });
+
+const modal = document.querySelector('#inquiry-modal');
+const modalForm = document.querySelector('#modal-lead-form');
+const modalClose = () => {
+  modal.hidden = true;
+  document.body.classList.remove('modal-open');
+};
+
+modal.querySelectorAll('[data-modal-close]').forEach((element) => element.addEventListener('click', modalClose));
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && !modal.hidden) modalClose();
+});
+
+window.setTimeout(() => {
+  if (sessionStorage.getItem('awevo-inquiry-modal-seen')) return;
+  sessionStorage.setItem('awevo-inquiry-modal-seen', 'true');
+  modal.hidden = false;
+  document.body.classList.add('modal-open');
+  modalForm.querySelector('input').focus();
+}, 3000);

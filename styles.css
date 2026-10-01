@@ -14,3 +14,6 @@
 .signal{border-color:rgba(255,255,255,.3)}.signal span{background:#fff}
 .art-orbit{border-color:rgba(255,255,255,.5)}
 .core-logo{display:block;width:105px;height:auto;filter:brightness(0) invert(1)}
+
+/* Timed inquiry modal */
+.modal-open{overflow:hidden}.inquiry-modal{position:fixed;inset:0;z-index:20;display:grid;place-items:center;padding:22px}.inquiry-modal[hidden]{display:none}.modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.68);backdrop-filter:blur(5px)}.modal-card{position:relative;width:min(560px,100%);max-height:calc(100vh - 44px);overflow:auto;background:var(--paper);padding:clamp(28px,5vw,52px);box-shadow:0 24px 80px rgba(0,0,0,.3);animation:modal-rise .28s ease both}.modal-close{position:absolute;top:17px;right:20px;border:0;background:transparent;color:var(--ink);font:32px/1 var(--sans);font-weight:300;cursor:pointer;padding:2px 8px}.modal-card h2{font-size:clamp(38px,6vw,62px);margin:20px 0 18px}.modal-intro{max-width:390px;color:var(--muted);font-size:14px;line-height:1.7;margin-bottom:28px}.modal-form{gap:20px;padding-top:0}.modal-form .button{margin-top:3px}.modal-form .form-note{margin-top:-4px}@keyframes modal-rise{from{opacity:0;transform:translateY(15px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
